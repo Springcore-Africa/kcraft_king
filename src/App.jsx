@@ -1,0 +1,22 @@
+import { useState } from 'react'
+import { Routes, Route } from 'react-router-dom'
+import Portfolio from './pages/Portfolio'
+import AboutUsPage from './pages/AboutUsPage'
+import ContactUsPage from './pages/ContactUsPage'
+import HomePage from './pages/HomePage'
+
+function App() {
+
+  return (
+    <>
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/about-us" element={<AboutUsPage />} />
+      <Route path="/contact-us" element={<ContactUsPage />} />
+      <Route path="/portfolio" element={<Portfolio />} />
+    </Routes>
+    </>
+  )
+}
+
+export default App
