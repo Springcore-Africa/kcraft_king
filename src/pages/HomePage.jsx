@@ -6,7 +6,7 @@ import Img3 from '../assets/pexels-expect-best-79873-323776.jpg';
 
 function HomePage() {
   return (
-    <main>
+    <main className='overflow-x-hidden '>
       <section className=" h-dvh w-dvw max-h-dvh max-w-dvw bg-[url('./assets/pexels-pixabay-258154.jpg')] bg-center bg-cover text-white px-5 overflow-hidden relative">
         <header className=" flex justify-between items-center min-h-14">
           <h2 className=" font-bold uppercase text-lg">Dnoin.inc</h2>
@@ -19,7 +19,7 @@ function HomePage() {
                 <li className="">Contact</li>
               </ul>
             </div>
-            <div className=' md:hidden flex-col items-center bg-white'>
+            {/* <div className=' md:hidden flex-col items-center bg-white'>
               <ul className=' flex flex-col items-center'>
                 <li className="">Projects</li>
                 <li className="">About Us</li>
@@ -38,7 +38,7 @@ function HomePage() {
                   </svg>
                 </span>
               </div>
-            </div>
+            </div> */}
           </nav>
           <button className=" flex justify-between items-center rounded-full outline bg-white">
             <span className=" bg-[url(./assets/pexels-pixabay-258154.jpg)] bg-position-[left_90%_top] rounded-full px-2 py-1 md:px-3 md:py-2">Get Started</span>
@@ -50,14 +50,14 @@ function HomePage() {
           </button>
         </header>
 
-        <div className=" px-5 flex flex-col items-start gap-10 justify-end h-10/12 pb-5">
-          <p className=" hidden w-1/3 text-lg">
+        <div className=" px-5 flex flex-col items-start gap-16 justify-end h-10/12 pb-5">
+          <p className=" hidden w-1/3 text-lg lg:block">
             According to vitruvius, the architect should strive to fulfill each of these three attributed as well as possible
           </p>
           <div className="flex justify-between items-end w-full">
             <div className="md:w-2/3">
               <h1 className=" text-7xl">Building</h1>
-              <div className="md:flex md:gap-3 md:items-center">
+              <div className="sm:flex sm:gap-3 sm:items-center">
                 <span className=" italic font-serif text-6xl pb-4 block md:inline">Beyond</span>
                 <button className="flex justify-between items-center rounded-full outline bg-white text-base">
                   <span className=" bg-[url(./assets/pexels-pixabay-258154.jpg)] bg-position-[left_bottom] rounded-full px-2 py-1 text-sm font-semibold md:px-3 md:py-2">Contact Us</span>
@@ -96,25 +96,25 @@ function HomePage() {
           <div className=" flex justify-between gap-10 items-start py-5">
             <div className="max-w-1/3">
               <h1 className=" leading-[30px] text-5xl"><span>Recent</span><br/><span className='italic font-serif text-4xl'>Projects</span></h1>
-              </div>
-              <div className=" hidden max-w-1/2">
-                <p>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis possimus odio tenetur vero a officiis repudiandae ex, alias ut provident at quis asperiores rerum dignissimos sit dolorem atque ad enim.</p>
-              </div>
-              <div className="">
-                <button className="flex justify-between items-center rounded-full outline bg-black text-base">
-                  <span className="bg-white rounded-full px-2 py-1 text-sm font-semibold md:px-3 md:py-2">View All</span>
-                  <span className="text-white p-1">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-4">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-                    </svg>
-                  </span>
-                </button>
-              </div>
+            </div>
+            <div className=" hidden max-w-1/3 lg:block">
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis possimus odio tenetur vero a officiis repudiandae ex, alias ut provident at quis asperiores rerum dignissimos sit dolorem atque ad enim.</p>
+            </div>
+            <div className="">
+              <button className="flex justify-between items-center rounded-full outline bg-black text-base">
+                <span className="bg-white rounded-full px-2 py-1 text-sm font-semibold md:px-3 md:py-2">View All</span>
+                <span className="text-white p-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-4">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                  </svg>
+                </span>
+              </button>
             </div>
           </div>
+        </div>
 
-          <div className="md:flex md:justify-evenly md:items-center">
+          <div className="flex flex-col md:flex-row md:justify-evenly items-center sm:*:w-3/4 xl:px-7">
             <div className="px-3 pb-5 pt-3 md:w-1/3">
               <div className='
                relative overflow-hidden aspect-[4/5] mini-loop pb-3
@@ -167,9 +167,27 @@ function HomePage() {
           <div className=' md:w-2/3'>
             <table className='w-full'>
               <tbody>
+                <tr className='border-t border-t-zinc-400 group *:p-3 hover:border-t-black *:text-zinc-500 *:group-hover:text-black *:transition-all *:duration-[5s] *:ease-in'>
+                  <td>
+                    <div className='w-14 aspect-square bg-red-200 md:invisible md:group-hover:visible'>
+                      <img src="" alt="" />
+                    </div>
+                  </td>
+                  <td>
+                    <p className='font-semibold text-md'>Full Name</p>
+                  </td>
+                  <td>
+                    <ul className='list-disc text-md'>
+                      <li>Location, Country</li>
+                    </ul>
+                  </td>
+                  <td>
+                    <p className='text-xs'>View Profile</p>
+                  </td>
+                </tr>
                 <tr className='border-t border-t-zinc-400 group *:p-3 hover:border-t-black *:text-zinc-500 *:group-hover:text-black'>
                   <td>
-                    <div className='w-14 aspect-square bg-red-200'>
+                    <div className='w-14 aspect-square bg-red-200 md:invisible md:group-hover:visible'>
                       <img src="" alt="" />
                     </div>
                   </td>
@@ -185,27 +203,9 @@ function HomePage() {
                     <p className='text-xs'>View Profile</p>
                   </td>
                 </tr>
-                <tr className='border-t border-t-zinc-600 group *:p-3 hover:border-t-black *:text-zinc-700 *:group-hover:text-black'>
+                <tr className='border-t border-t-zinc-400 group *:p-3 hover:border-t-black *:text-zinc-500 *:group-hover:text-black'>
                   <td>
-                    <div className='w-14 aspect-square bg-red-200'>
-                      <img src="" alt="" />
-                    </div>
-                  </td>
-                  <td>
-                    <p className='font-semibold text-md'>Full Name</p>
-                  </td>
-                  <td>
-                    <ul className='list-disc text-md'>
-                      <li>Location, Country</li>
-                    </ul>
-                  </td>
-                  <td>
-                    <p className='text-xs'>View Profile</p>
-                  </td>
-                </tr>
-                <tr className='border-t border-t-zinc-600 group *:p-3 hover:border-t-black *:text-zinc-700 *:group-hover:text-black'>
-                  <td>
-                    <div className='w-14 aspect-square bg-red-200'>
+                    <div className='w-14 aspect-square bg-red-200 md:invisible md:group-hover:visible'>
                       <img src="" alt="" />
                     </div>
                   </td>
@@ -227,10 +227,10 @@ function HomePage() {
         </div>
       </section>
 
-      <section className=" h-dvh w-dvw max-h-dvh max-w-dvw bg-[url('./assets/pexels-binyaminmellish-1396132.jpg')] bg-center bg-cover text-white px-5 overflow-hidden relative">
-        <div className=' h-full flex flex-col justify-end py-7'>
-          <div></div>
-          <div className=''>
+      <section className=" h-dvh max-h-dvh max-w-dvw bg-[url('./assets/pexels-binyaminmellish-1396132.jpg')] bg-center bg-cover text-white px-5 overflow-hidden relative box-border">
+        <div className=' h-full w-full flex flex-col justify-end py-7'>
+          <div className='md:h-0.5 md:w-full md:bg-white'></div>
+          <div className='md:flex md:justify-between md:items-center'>
             <h2 className='text-5xl pb-3'>
               <span>Project</span>
               <br />
@@ -243,7 +243,7 @@ function HomePage() {
               <li>Civic Project</li>
             </ul>
             <button className=" flex justify-between items-center rounded-full outline bg-white">
-              <span className=" bg-[url(./assets/pexels-binyaminmellish-1396132.jpg)] bg-position-[left_40%_top_rem] rounded-full px-2 py-1 ">Contact us</span>
+              <span className=" bg-[url(./assets/pexels-binyaminmellish-1396132.jpg)] bg-position-[left_40%_top_rem] rounded-full px-2 py-1 md:px-3 md:py-2 ">Contact us</span>
               <span className="text-black px-1 rounded-full ">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-4">
                   <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
@@ -262,17 +262,17 @@ function HomePage() {
             </li>
           </ul>    
           <div className=''>
-            <div className='border-t border-t-zinc-600 px-3 py-2'>
-              <div className=' w-full aspect-video overflow-hidden'>
+            <div className='border-t border-t-zinc-600 px-3 py-2 md:flex md:flex-row-reverse md:py-4 md:justify-between'>
+              <div className=' w-full aspect-video overflow-hidden md:w-1/2 lg:w-1/3'>
                 <img src={Img3} alt="" className='w-full h-full object-cover' />
               </div>
-              <div className=''>
-                <h4 className='font-semibold text-lg pb-2'>Building Fullname</h4>
-                <p className=' pb-2 text-md'>
+              <div className='md:w-1/2'>
+                <h4 className='font-semibold text-lg pb-2 md:text-xl'>Building Fullname</h4>
+                <p className=' pb-2 text-md md:text-base'>
                   Some minor text about the building that does not take much space
                 </p>
                 <button className="flex justify-between items-center rounded-full outline bg-black text-base mb-2">
-                  <span className="bg-white rounded-full px-2 py-1 text-sm font-semibold">View More</span>
+                  <span className="bg-white rounded-full px-2 py-1 text-sm font-semibold md:px-3 md:py-2"> View More</span>
                   <span className="text-white p-1">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-4">
                       <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
@@ -281,17 +281,17 @@ function HomePage() {
                 </button>
               </div>
             </div>
-            <div className='border-t border-t-zinc-600 px-3 py-2'>
-              <div className=' w-full aspect-video overflow-hidden'>
+            <div className='border-t border-t-zinc-600 px-3 py-2 md:flex md:flex-row-reverse md:py-4 md:justify-between'>
+              <div className=' w-full aspect-video overflow-hidden md:w-1/2 lg:w-1/3'>
                 <img src={Img3} alt="" className='w-full h-full object-cover' />
               </div>
-              <div className=''>
-                <h4 className='font-semibold text-lg pb-2'>Building Fullname</h4>
-                <p className=' pb-2 text-md'>
+              <div className='md:w-1/2'>
+                <h4 className='font-semibold text-lg pb-2 md:text-xl'>Building Fullname</h4>
+                <p className=' pb-2 text-md md:text-base'>
                   Some minor text about the building that does not take much space
                 </p>
                 <button className="flex justify-between items-center rounded-full outline bg-black text-base mb-2">
-                    <span className="bg-white rounded-full px-2 py-1 text-sm font-semibold">View More</span>
+                    <span className="bg-white rounded-full px-2 py-1 text-sm font-semibold md:px-3 md:py-2">View More</span>
                     <span className="text-white p-1">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-4">
                         <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
