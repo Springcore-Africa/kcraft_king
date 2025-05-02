@@ -3,3 +3,38 @@
 *{
   @apply box-border
 }
+
+.nav-button{
+  @apply invisible rotate-90 transition-all duration-300 ease-in z-40 text-white group-hover:text-black
+}
+
+.nav-button.shown{
+  @apply visible rotate-0
+}
+
+.mini-nav{
+  @apply flex flex-col gap-6 justify-center items-center h-[50dvh] min-h-[350px] w-full top-0 left-0 bg-white absolute 
+}
+
+.mini-nav{
+  clip-path: circle(100% at 47% 10%);
+  transition: all 200ms ease-in;
+}
+
+.mini-nav.closed{
+  clip-path: circle(0% at 47% 10%);
+}
+
+.mini-nav li{
+  @apply  w-[90%] flex justify-center py-1.5 relative z-50  hover:text-white transition-all duration-300 ease-in cursor-pointer
+  before:absolute before:content-[''] before:w-full before:left-0 before:top-0 before:h-full before:-z-10 before:rounded hover:before:bg-neutral-700
+}
+
+.mini-nav li::before{
+  clip-path: circle(0% at 50% 50%);
+  transition: all 300ms ease-in;
+}
+
+.mini-nav li:hover::before{
+  clip-path: circle(100% at 50% 50%);
+}
