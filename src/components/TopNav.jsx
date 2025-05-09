@@ -1,5 +1,6 @@
 import { motion, useAnimation } from "motion/react";
 import { useState } from "react";
+import {Link, Outlet} from 'react-router-dom'
 
 const TopNav = () => {
   const controls = useAnimation();
@@ -18,11 +19,17 @@ const TopNav = () => {
       transition={{ duration: 0.6, delay : 1 }}
     >  
       <div className='hidden md:block text-white'>
-        <ul className=" flex justify-between items-center relative z-20 gap-5 *:px-4 *:py-2 *:rounded-full *:hover:bg-neutral-100 *:hover:text-black *:transition-colors *:duration-200 *:ease-in *:cursor-pointer">
-          <li className="">Projects</li>
-          <li className="">About Us</li>
+        <ul className=" flex justify-between items-center relative z-20 gap-5 *:px-4 *:py-2 *:rounded-full *:hover:bg-neutral-50 *:hover:text-black *:transition-colors *:duration-200 *:ease-in *:cursor-pointer">
+          <li className="">
+            <Link to='/portfolio'>Projects</Link>
+          </li>
+          <li className="">
+            <Link to='/about-us'>About Us</Link>
+          </li>
+          <li className="">
+            <Link to='/contact-us'>Contact</Link>
+          </li>
           <li className="">Blog</li>
-          <li className="">Contact</li>
         </ul>
       </div>
 

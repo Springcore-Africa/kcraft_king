@@ -38,3 +38,10 @@
 .mini-nav li:hover::before{
   clip-path: circle(100% at 50% 50%);
 }
+
+.background{
+  /* background-color: #45556c; */
+  opacity: 0.8;
+  background: radial-gradient(circle, transparent 20%, #45556c 20%, #45556c 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, #45556c 20%, #45556c 80%, transparent 80%, transparent) 20px 20px, linear-gradient(#b5b5bc 1.6px, transparent 1.6px) 0 -0.8px, linear-gradient(90deg, #b5b5bc 1.6px, #45556c 1.6px) -0.8px 0;
+  background-size: 40px 40px, 40px 40px, 20px 20px, 20px 20px;
+}

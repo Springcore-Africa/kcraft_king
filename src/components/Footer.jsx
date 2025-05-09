@@ -1,8 +1,10 @@
 import React from 'react'
+import {Link, Outlet} from 'react-router-dom'
 
 function Footer() {
   return (
-    <section className='py-5 px-10 bg-neutral-900 text-gray-50'>
+    <>
+      <section className='py-5 px-10 bg-neutral-900 text-gray-50'>
         <div className="py-10 lg:flex lg:justify-between lg:items-start">
           <div className=" py-3">
             <h2 className=' uppercase font-semibold pb-4'>Contact</h2>
@@ -56,34 +58,40 @@ function Footer() {
               <h2 className=' uppercase font-semibold pb-4'>Explore</h2>
               <ul className=' *:pb-3'>
                 <li>
-                  <div className=" flex items-center gap-3 group">
-                    <span className=' group-hover:translate-x-1 transition-all duration-300 ease-in'>
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-4">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-                      </svg>
-                    </span>
-                    <span>Projects</span>
-                  </div>
+                  <Link to='/portfolio'>
+                    <div className=" flex items-center gap-3 group">
+                      <span className=' group-hover:translate-x-1 transition-all duration-300 ease-in'>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-4">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                        </svg>
+                      </span>
+                      <span>Projects</span>
+                    </div>
+                  </Link>
                 </li>
                 <li>
-                  <div className=" flex items-center gap-3 group">
-                    <span className=' group-hover:translate-x-1 transition-all duration-300 ease-in'>
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-4">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-                      </svg>
-                    </span>
-                    <span>About</span>
-                  </div>
+                  <Link to='/about-us'>
+                    <div className=" flex items-center gap-3 group">
+                      <span className=' group-hover:translate-x-1 transition-all duration-300 ease-in'>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-4">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                        </svg>
+                      </span>
+                      <span>About</span>
+                    </div>
+                  </Link>
                 </li>
                 <li>
-                  <div className=" flex items-center gap-3 group">
-                    <span className=' group-hover:translate-x-1 transition-all duration-300 ease-in'>
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-4">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-                      </svg>                    
-                    </span>
-                    <span>Contact</span>
-                  </div>
+                  <Link to='/contact-us'>
+                    <div className=" flex items-center gap-3 group">
+                      <span className=' group-hover:translate-x-1 transition-all duration-300 ease-in'>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-4">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                        </svg>                    
+                      </span>
+                      <span>Contact</span>
+                    </div>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -122,6 +130,8 @@ function Footer() {
           <p>&copy; 2025 <span className=' uppercase'>Kcraft king design</span>. All rights reserved.</p>
         </div>
       </section>
+      <Outlet /> 
+    </>
   )
 }
 
