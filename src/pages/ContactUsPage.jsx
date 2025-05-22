@@ -1,15 +1,31 @@
-import React from 'react'
+import React, {useState}from 'react'
 import Footer from '../components/Footer'
+import {Link, Outlet} from 'react-router-dom'
+
+import logo from '../assets/k-craft/header-logo.png'
+import TopNav from '../components/TopNav';
 
 function ContactUsPage() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleOpen = () => {
+    setIsOpen(!isOpen);
+  }
+  
   return (
     <>
+      <TopNav />
       <section className='p-5'>
-        <div className=" text-center py-5 pb-8">
-          <h1 className=' text-6xl font-semibold text-slate-600 pb-3'>Get in Touch With Us</h1>
-          <p className=' text-slate-600'>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate, dignissimos beatae earum possimus, eum nulla magni optio perferendis accusamus nesciunt quos placeat eius tempora .
-          </p>
+        <div className=" text-center pb-8">
+          <section 
+           className=" bg-[url('./assets/1-New-Size-11.jpg')] h-[40dvh] min-h-[200px] bg-position-[center_top_70%] bg-cover flex flex-col justify-center items-center rounded-2xl relative lg:h-[40dvh] 
+          
+          ">
+            <h1 className=' text-6xl font-semibold text-white pb-3'>Get in Touch With Us</h1>
+            <p className=' text-slate-600 py-5 hidden '>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate, dignissimos beatae earum possimus, eum nulla magni optio perferendis accusamus nesciunt quos placeat eius tempora .
+            </p>
+          </section>
         </div>
         <div className=" md:flex md:justify-between md:items-start md:*:w-[48%]">
           <div className=" bg-zinc-100 rounded-md py-7 px-8 mb-8">
@@ -129,6 +145,7 @@ function ContactUsPage() {
         </div>
       </section>
       <Footer />
+      <Outlet />
     </>
   )
 }

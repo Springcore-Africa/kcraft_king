@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {Link, Outlet} from 'react-router-dom'
 
 import TopNav from '../components/TopNav'
@@ -8,27 +8,21 @@ import img1 from '../assets/k-craft/img-1.jpg'
 import logo from '../assets/k-craft/header-logo.png'
 
 function AboutUsPage() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleOpen = () => {
+    setIsOpen(!isOpen);
+  }
   return (
     <>
-    {/* <header className=" flex justify-between items-center min-h-14">
-      <img src={logo} alt="" className='max-w-[120px]'/>
-      <TopNav />
-      <button className=" flex justify-between items-center rounded-full outline bg-white">
-        <span className=" bg-[url('./assets/k-craft/background-img1.jpg')] bg-position-[left_80%_top] rounded-full px-2 py-1 md:px-3 md:py-2">Get Started</span>
-        <span className="text-black p-1 rounded-full ">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-4">
-            <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-          </svg>
-        </span>
-      </button>
-    </header> */}
+    <TopNav />
 
     <section className='p-5'>
       <section 
-       className=" bg-[url('./assets/k-craft/background-img1.jpg')] h-[20dvh] min-h-[200px] bg-center bg-cover flex justify-center items-center rounded-2xl relative lg:h-[40dvh]
-       before:absolute before:content-[''] before:h-7 before:w-28 before:top-0 before:right-0 before:bg-white before:rounded-bl-2xl
-       after:absolute after:content-[''] after:h-7 after:w-28 after:bottom-0 after:left-0 after:bg-white after:rounded-tr-2xl
+       className=" bg-[url('./assets/4.-Create-Interior-Design-Cannon-Pl.jpg')] h-[20dvh] min-h-[200px] bg-center bg-cover flex flex-col justify-center items-center rounded-2xl relative lg:h-[40dvh]
+       
       ">
+        {/* <TopNav /> */}
         <h1 className='text-5xl text-white uppercase'>About Us</h1>
       </section>
       <div className=' py-2'>

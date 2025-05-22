@@ -1,5 +1,11 @@
 import React from 'react'
 import {Link, Outlet} from 'react-router-dom'
+import {Swiper, SwiperSlide} from 'swiper/react'
+import {Pagination,Navigation,Autoplay} from 'swiper/modules'
+
+import 'swiper/css'
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 import TopNav from '../components/TopNav';
 import Footer from '../components/Footer';
@@ -11,57 +17,128 @@ import Img4 from '../assets/k-craft/img-4.jpg';
 import Img5 from '../assets/k-craft/img-5.jpg';
 import Img6 from '../assets/k-craft/img-6.jpg';
 
-import logo from '../assets/k-craft/header-logo.png'
-
 function HomePage() {
 
   return (
     <>
-      <main className='overflow-x-hidden '>
-        <section className=" h-dvh w-dvw max-h-dvh max-w-dvw bg-[url('./assets/k-craft/background-img1.jpg')] bg-center bg-cover text-white px-5 overflow-hidden relative">
-          <header className=" flex justify-between items-center min-h-14">
-            <img src={logo} alt="" className='max-w-[120px]'/>
-            <TopNav />
-            <button className=" flex justify-between items-center rounded-full outline bg-white">
-              <span className=" bg-[url('./assets/k-craft/background-img1.jpg')] bg-position-[left_80%_top] rounded-full px-2 py-1 md:px-3 md:py-2">Get Started</span>
-              <span className="text-black p-1 rounded-full ">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-4">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-                </svg>
-              </span>
-            </button>
-          </header>
+      <main className='overflow-x-hidden relative'>
+        <TopNav />
+        <Swiper
+          modules={[Navigation, Pagination, Autoplay]}
+          autoplay={{delay:3000, disableOnInteraction:false}}
+          slidesPerView={1}
+          pagination={{ clickable: true }}
+          onSlideChange={() => console.log('slide change')}
+          onSwiper={(swiper) => console.log(swiper)}
+          loop
 
-          <div className=" px-5 flex flex-col items-start gap-16 justify-end h-10/12 pb-5">
-            <p className=" hidden w-1/3 text-lg lg:block">
-              According to vitruvius, the architect should strive to fulfill each of these three attributed as well as possible
-            </p>
-            <div className="flex justify-between items-end w-full">
-              <div className="md:w-2/3">
-                <h1 className=" text-7xl">Building</h1>
-                <div className="sm:flex sm:gap-3 sm:items-center">
-                  <span className=" italic font-serif text-6xl pb-4 block md:inline">Beyond</span>
-                  <Link to='/contact-us'>
-                    <button className="flex justify-between items-center rounded-full outline bg-white text-base">
-                      <span className=" bg-[url(./assets/pexels-pixabay-258154.jpg)] bg-position-[left_bottom] rounded-full px-2 py-1 text-sm font-semibold md:px-3 md:py-2">Contact Us</span>
-                      <span className="text-black px-1 py-1">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-4">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-                        </svg>
-                      </span>
-                    </button>
+        >
+          <SwiperSlide>
+            <section className=" min-h-[50dvh] bg-[url('./assets/k-craft/background-img1.jpg')] bg-center bg-cover text-white px-5 overflow-hidden relative m-5 rounded-md flex justify-center items-center lg:block z-0">
+              
 
-                  </Link>
+              <div className=" px-5 flex flex-col items-start gap-16 justify-end h-10/12 pb-5">
+                <p className=" hidden w-1/3 text-lg lg:block">
+                  According to vitruvius, the architect should strive to fulfill each of these three attributed as well as possible
+                </p>
+                <div className="flex justify-between items-end w-full">
+                  <div className="md:w-2/3">
+                    <h1 className=" text-7xl">Building</h1>
+                    <div className="sm:flex sm:gap-3 sm:items-center">
+                      <span className=" italic font-serif text-6xl pb-4 block md:inline">Beyond</span>
+                      <Link to='/contact-us'>
+                        <button className="flex justify-between items-center rounded-full outline bg-white text-base">
+                          <span className=" bg-[url(./assets/pexels-pixabay-258154.jpg)] bg-position-[left_bottom] rounded-full px-2 py-1 text-sm font-semibold md:px-3 md:py-2">Contact Us</span>
+                          <span className="text-black px-1 py-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-4">
+                              <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                            </svg>
+                          </span>
+                        </button>
+
+                      </Link>
+                    </div>
+                  </div>
+                  <div className="hidden w-1/3 p-3 md:block">
+                    <h3 className=" font-semibold text-xl">Architecture can mean</h3>
+                    <p className=" text-md">A general term to describe buildings and other physical structures.</p>
+                  </div>
                 </div>
               </div>
-              <div className="hidden w-1/3 p-3 md:block">
-                <h3 className=" font-semibold text-xl">Architecture can mean</h3>
-                <p className=" text-md">A general term to describe buildings and other physical structures.</p>
+              
+            </section>
+          </SwiperSlide>
+          <SwiperSlide>
+            <section className=" min-h-[50dvh] bg-[url('./assets/k-craft/img-1.jpg')] bg-center bg-cover text-white px-5 overflow-hidden relative m-5 rounded-md flex justify-center items-center lg:block z-0">
+              
+
+              <div className=" px-5 flex flex-col items-start gap-16 justify-end h-10/12 pb-5">
+                <p className=" hidden w-1/3 text-lg lg:block">
+                  According to vitruvius, the architect should strive to fulfill each of these three attributed as well as possible
+                </p>
+                <div className="flex justify-between items-end w-full">
+                  <div className="md:w-2/3">
+                    <h1 className=" text-7xl">Building</h1>
+                    <div className="sm:flex sm:gap-3 sm:items-center">
+                      <span className=" italic font-serif text-6xl pb-4 block md:inline">Beyond</span>
+                      <Link to='/contact-us'>
+                        <button className="flex justify-between items-center rounded-full outline bg-white text-base">
+                          <span className=" bg-[url(./assets/pexels-pixabay-258154.jpg)] bg-position-[left_bottom] rounded-full px-2 py-1 text-sm font-semibold md:px-3 md:py-2">Contact Us</span>
+                          <span className="text-black px-1 py-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-4">
+                              <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                            </svg>
+                          </span>
+                        </button>
+
+                      </Link>
+                    </div>
+                  </div>
+                  <div className="hidden w-1/3 p-3 md:block">
+                    <h3 className=" font-semibold text-xl">Architecture can mean</h3>
+                    <p className=" text-md">A general term to describe buildings and other physical structures.</p>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-          
-        </section>
+              
+            </section>
+          </SwiperSlide>
+          <SwiperSlide>
+            <section className=" min-h-[50dvh] bg-[url('./assets/k-craft/img-2.jpg')] bg-center bg-cover text-white px-5 overflow-hidden relative m-5 rounded-md flex justify-center items-center lg:block z-0">
+              
+
+              <div className=" px-5 flex flex-col items-start gap-16 justify-end h-10/12 pb-5">
+                <p className=" hidden w-1/3 text-lg lg:block">
+                  According to vitruvius, the architect should strive to fulfill each of these three attributed as well as possible
+                </p>
+                <div className="flex justify-between items-end w-full">
+                  <div className="md:w-2/3">
+                    <h1 className=" text-7xl">Building</h1>
+                    <div className="sm:flex sm:gap-3 sm:items-center">
+                      <span className=" italic font-serif text-6xl pb-4 block md:inline">Beyond</span>
+                      <Link to='/contact-us'>
+                        <button className="flex justify-between items-center rounded-full outline bg-white text-base">
+                          <span className=" bg-[url(./assets/pexels-pixabay-258154.jpg)] bg-position-[left_bottom] rounded-full px-2 py-1 text-sm font-semibold md:px-3 md:py-2">Contact Us</span>
+                          <span className="text-black px-1 py-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-4">
+                              <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                            </svg>
+                          </span>
+                        </button>
+
+                      </Link>
+                    </div>
+                  </div>
+                  <div className="hidden w-1/3 p-3 md:block">
+                    <h3 className=" font-semibold text-xl">Architecture can mean</h3>
+                    <p className=" text-md">A general term to describe buildings and other physical structures.</p>
+                  </div>
+                </div>
+              </div>
+              
+            </section>
+          </SwiperSlide>
+        </Swiper>
 
         <section className='py-5 px-10'>
           <div className="py-5 box-border md:flex md:items-start">
