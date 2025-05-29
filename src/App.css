@@ -87,3 +87,8 @@
   background-color: #1a1a1a !important; /* or any color */
   opacity: 1;
 }
+
+.second-slide .swiper-slide-thumb-active {
+  filter: brightness(0.7); /* Darkens the active slide */
+  transition: filter 0.3s ease; /* Smooth transition */
+}

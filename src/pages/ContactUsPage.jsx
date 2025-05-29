@@ -13,7 +13,7 @@ function ContactUsPage() {
   }
   
   return (
-    <>
+    <main className=' overflow-x-hidden'>
       <TopNav />
       <section className='p-5'>
         <div className=" text-center pb-8">
@@ -146,7 +146,7 @@ function ContactUsPage() {
       </section>
       <Footer />
       <Outlet />
-    </>
+    </main>
   )
 }
 
