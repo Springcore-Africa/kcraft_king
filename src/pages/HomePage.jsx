@@ -15,7 +15,6 @@ import Img2 from '../assets/k-craft/img-2.jpg';
 import Img3 from '../assets/k-craft/img-3.jpg';
 import Img4 from '../assets/k-craft/img-4.jpg';
 import Img5 from '../assets/k-craft/img-5.jpg';
-import Img6 from '../assets/k-craft/img-6.jpg';
 
 function HomePage() {
 
