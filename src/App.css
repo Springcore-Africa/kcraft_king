@@ -1,43 +1,94 @@
 @import "tailwindcss";
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+
+*{
+  @apply box-border
+}
+
+.nav-button{
+  @apply invisible rotate-90 transition-all duration-300 ease-in z-0 text-black group-hover:text-black
+}
+
+.nav-button.shown{
+  @apply visible rotate-0
+}
+
+.mini-nav{
+  @apply z-10 flex flex-col gap-12 justify-center items-center h-dvh w-dvw top-0 left-0 bg-white absolute md:hidden
+}
+
+.mini-nav{
+  clip-path: circle(150% at 47% 10%);
+  transition: all 200ms ease-in;
+}
+
+.mini-nav.closed{
+  clip-path: circle(0% at 47% 10%);
+}
+
+.mini-nav li{
+  @apply  w-[90%] flex justify-center py-1.5 relative z-50 transition-all duration-300 ease-in cursor-pointer
+  before:absolute before:content-[''] before:w-full before:left-0 before:top-0 before:h-full before:-z-10 before:rounded before:bg-slate-200 
+}
+
+.mini-nav li::before{
+  clip-path: circle(0% at 50% 50%);
+  transition: all 300ms ease-in;
+}
+
+.mini-nav li:hover::before{
+  clip-path: circle(100% at 50% 50%);
+}
+
+.about-nav{
+  @apply bg-white absolute z-10 left-0 top-0 size-full flex justify-center flex-col items-center gap-12
+}
+
+.about-nav{
+  clip-path: circle(140% at 100% 10%);
+  transition: all 200ms ease-in;
+}
+
+.about-nav.closed{
+  clip-path: circle(0% at 100% 10%);
+}
+
+.about-nav li{
+  @apply py-2 w-[90%] text-center rounded-md relative z-20 cursor-pointer after:absolute *:w-full *:block after:size-full after:left-0 after:top-0 after:bg-slate-100 after:-z-10 after:content-[''] hover:after:bg-slate-200
+}
+
+.bars{
+  @apply invisible rotate-90 transition-all duration-300 ease-in
+}
+
+.bars.shown{
+  @apply visible rotate-0
+}
+
+.background{
+  /* background-color: #45556c; */
+  opacity: 0.8;
+  background: radial-gradient(circle, transparent 20%, #45556c 20%, #45556c 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, #45556c 20%, #45556c 80%, transparent 80%, transparent) 20px 20px, linear-gradient(#b5b5bc 1.6px, transparent 1.6px) 0 -0.8px, linear-gradient(90deg, #b5b5bc 1.6px, #45556c 1.6px) -0.8px 0;
+  background-size: 40px 40px, 40px 40px, 20px 20px, 20px 20px;
+}
+
+.swiper-pagination {
+  position: relative !important; /* put below */
+  margin-top: 1rem;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Custom color */
+.swiper-pagination-bullet {
+  background-color: #3a3a3a !important;
+  opacity: 0.7;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.swiper-pagination-bullet-active {
+  background-color: #1a1a1a !important; /* or any color */
+  opacity: 1;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+.second-slide .swiper-slide-thumb-active {
+  filter: brightness(0.7); /* Darkens the active slide */
+  transition: filter 0.3s ease; /* Smooth transition */
 }
