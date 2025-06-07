@@ -3,7 +3,6 @@ import img1 from '../assets/k-craft/img-1.jpg';
 import img2 from '../assets/k-craft/img-2.jpg';
 import img3 from '../assets/k-craft/img-3.jpg';
 import img4 from '../assets/k-craft/img-4.jpg';
-import img5 from '../assets/k-craft/img-5.jpg';
 
 import layout from '../assets/k-craft/layout.jpg';
 
