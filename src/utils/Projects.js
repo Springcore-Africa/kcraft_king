@@ -22,7 +22,7 @@ export const Projects = [
         features: ['Spacious Living Room', 'Modern Kitchen', 'Energy Efficient', 'Smart Home Features', 'Beautiful Landscaping','Open Concept Living', 'High Ceilings', 'Sustainable Materials', 'Outdoor Living Spaces', 'Custom Finishes'],
     },
     {
-        id: 2,
+        id:2,
         buildingName: "House 2",
         img: img2,
         desc: "A contemporary house with a unique architectural style. This house showcases a contemporary design with bold lines and unique architectural features. The exterior is characterized by a mix of materials, including stone and wood, creating a striking visual impact. The interior spaces are designed for comfort and functionality, making it an ideal family home.",
