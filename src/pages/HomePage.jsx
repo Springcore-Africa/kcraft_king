@@ -14,7 +14,7 @@ import Img1 from '../assets/k-craft/img-1.jpg';
 import Img2 from '../assets/k-craft/img-2.jpg';
 import Img3 from '../assets/k-craft/img-3.jpg';
 import Img4 from '../assets/k-craft/img-4.jpg';
-import Img5 from '../assets/k-craft/img-5.jpg';
+import nice from '../assets/k-craft/img-5.jpg';
 
 function HomePage() {
 
@@ -344,7 +344,7 @@ function HomePage() {
               </div>
               <div className='border-t border-t-zinc-600 px-3 py-2 md:flex md:flex-row-reverse md:py-4 md:justify-between'>
                 <div className=' w-full aspect-video overflow-hidden md:w-1/2 lg:w-1/3'>
-                  <img src={Img5} alt="" className='w-full h-full object-cover' />
+                  <img src={nice} alt="" className='w-full h-full object-cover' />
                 </div>
                 <div className='md:w-1/2'>
                   <h4 className='font-semibold text-lg pb-2 md:text-xl'>Building Fullname</h4>
