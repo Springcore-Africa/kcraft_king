@@ -7,10 +7,7 @@ export const HeroSlides = [
   {
     id: 1,
     image: heroImg,
-    // title: "Designing",
-    // subtitle: "Spaces That Inspire",
-    // description: "A general term to describe buildings and other physical structures.",
-    // extraText: "",
+    
   },
   {
     id: 2,

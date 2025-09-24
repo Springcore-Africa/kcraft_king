@@ -82,11 +82,7 @@ const handleSubmit = (e) => {
                 <textarea name="message" id="" placeholder='Leave us a message' className='bg-white w-full py-2 px-4 rounded active:outline-2 active:outline-slate-600 focus:outline-2 focus:outline-slate-600 text-zinc-500 placeholder:text-zinc-500 min-h-30 resize-none' >
                 </textarea>
               </div>
-              {/* <div className=" pb-3 flex justify-center items-center">
-                <button className=' bg-slate-600 text-white py-2 px-3 rounded-full flex justify-between items-center gap-2'>
-                    Send Message
-                </button>
-              </div> */}
+              
               <div className="pb-3 flex justify-center items-center">
           <button
             type="submit"

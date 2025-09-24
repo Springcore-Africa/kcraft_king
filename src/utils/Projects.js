@@ -5,12 +5,9 @@ import img3 from '../assets/k-craft/img-3.jpg';
 import img4 from '../assets/k-craft/img-4.jpg';
 import palmview from '../assets/k-craft/palm_view.jpg'
 
-import layout from '../assets/k-craft/floorplan3.png';
+
 import process from '../assets/k-craft/process.jpg'
-import ongoing from '../assets/k-craft/ongoing-palm.webp'
-import ongoing1 from '../assets/k-craft/ongoing-palm2.webp'
-import process2 from '../assets/k-craft/process2.jpg'
-import land from '../assets/k-craft/land-palm.jpeg'
+
 import land2 from '../assets/k-craft/land-palm2.webp'
 import build1 from '../assets/k-craft/build1.jpg'
 import floor from '../assets/k-craft/floor.png'
@@ -79,12 +76,5 @@ export const Projects = [
     //     features: ['Spacious Living Room', 'Modern Kitchen', 'Energy Efficient', 'Smart Home Features', 'Beautiful Landscaping','Open Concept Living', 'High Ceilings', 'Sustainable Materials', 'Outdoor Living Spaces', 'Custom Finishes'],
     // },
     // {
-    //     id: 2,
-    //     buildingName: "House 2",
-    //     img: img2,
-    //     desc: "A contemporary house with a unique architectural style. This house showcases a contemporary design with bold lines and unique architectural features. The exterior is characterized by a mix of materials, including stone and wood, creating a striking visual impact. The interior spaces are designed for comfort and functionality, making it an ideal family home.",
-    //     gallery: [img1, img2, img3, img4],
-    //     floorPlan: layout,
-    //     features: ['Open Concept Living', 'High Ceilings', 'Sustainable Materials', 'Outdoor Living Spaces', 'Custom Finishes'],
-    // },
+    
 ];
