@@ -1,16 +1,42 @@
-import React, {useState}from 'react'
-import Footer from '../components/Footer'
-import {Link, Outlet} from 'react-router-dom'
 
-import logo from '../assets/k-craft/header-logo.png'
+import Footer from '../components/Footer'
+import {Outlet} from 'react-router-dom'
+
 import TopNav from '../components/TopNav';
+import emailjs from'@emailjs/browser';
+import { useState } from 'react';
 
 function ContactUsPage() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
-  const toggleOpen = () => {
-    setIsOpen(!isOpen);
-  }
+  
+
+const handleSubmit = (e) => {
+  e.preventDefault();
+
+  emailjs
+    .sendForm(
+      "service_1bcf68r",
+      "template_682rfps",
+      e.target,
+      "6zok_6eCVqpGVaHN7"
+    )
+    .then(
+      (result) => {
+        console.log("Message sent:", result.text);
+      },
+      (error) => {
+        console.error("Error:", error.text);
+      }
+    );
+
+    setTimeout(() => {
+      setShowModal(true);
+      setIsSubmitting(false);
+    }, 1500);
+};
+
   
   return (
     <main className=' overflow-x-hidden'>
@@ -23,60 +49,71 @@ function ContactUsPage() {
           ">
             <h1 className=' text-6xl font-semibold text-white pb-3'>Get in Touch With Us</h1>
             <p className=' text-slate-600 py-5 hidden '>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate, dignissimos beatae earum possimus, eum nulla magni optio perferendis accusamus nesciunt quos placeat eius tempora .
+              Our team is here to provide quick answers and professional support. Whether it’s about our services, ongoing projects, or how we can help you, we’re always ready to assist.
             </p>
           </section>
         </div>
         <div className=" md:flex md:justify-between md:items-start md:*:w-[48%]">
           <div className=" bg-zinc-100 rounded-md py-7 px-8 mb-8">
             <h3 className=' text-3xl'>Have Questions? We're Just a Message Away!</h3>
-            <span className=' block pb-3'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque rem dolorum maiores pariatur sunt! Velit placeat veniam obcaecati.</span>
-            <form action="">
-              <div className=' sm:flex sm:justify-between sm:items-center sm:*:w-[48%] md:flex-col md:*:w-full lg:flex-row lg:*:w-[48%]'>
+            <span className=' block pb-3'>Our team is here to provide quick answers and professional support. Whether it’s about our services, ongoing projects, or how we can help you, we’re always ready to assist.</span>
+            <form action="" onSubmit={handleSubmit}>
+              <div className=' sm:flex sm:justify-between sm:items-center sm:*:w-[48%] md:flex-col md:*:w-full lg:flex-row lg:*:w-[108%]'>
                 <div className=" pb-3 *:block">
                   <label htmlFor='' className=' pb-2'>First Name</label>
-                  <input type="text" placeholder='Firstname' className='bg-white w-full py-2 px-4 rounded active:outline-2 active:outline-slate-600 focus:outline-2 focus:outline-slate-600 text-zinc-500 placeholder:text-zinc-500'/>
-                </div>
-                <div className=" pb-3 *:block">
-                  <label htmlFor="" className=' pb-2'>Last Name</label>
-                  <input type="text" placeholder='Lastname' className='bg-white w-full py-2 px-4 rounded active:outline-2 active:outline-slate-600 focus:outline-2 focus:outline-slate-600 text-zinc-500 placeholder:text-zinc-500 '/>
+                  <input type="text" placeholder='Full Name' name='from_name' className='bg-white w-full py-2 px-4 rounded active:outline-2 active:outline-slate-600 focus:outline-2 focus:outline-slate-600 text-zinc-500 placeholder:text-zinc-500'/>
                 </div>
               </div>
               <div className=" pb-3 *:block">
                 <label htmlFor="" className=' pb-2'>E-mail</label>
-                <input type='email' placeholder='something@gmail.com' className='bg-white w-full py-2 px-4 rounded active:outline-2 active:outline-slate-600 focus:outline-2 focus:outline-slate-600 text-zinc-500 placeholder:text-zinc-500'/>
-              </div>
-              <div className=" pb-3 *:block">
-                <label htmlFor="" className=' pb-2'>Phone Number</label>
-                <input type="text" placeholder='+2348010152029' className='bg-white w-full py-2 px-4 rounded active:outline-2 active:outline-slate-600 focus:outline-2 focus:outline-slate-600 text-zinc-500 placeholder:text-zinc-500'/>
+                <input type='email' placeholder='something@gmail.com' name='reply_to' className='bg-white w-full py-2 px-4 rounded active:outline-2 active:outline-slate-600 focus:outline-2 focus:outline-slate-600 text-zinc-500 placeholder:text-zinc-500'/>
               </div>
               <div className=" pb-3 *:block">
                 <label htmlFor="" className=' pb-2'>Subject</label>
-                <select name="" id="" value='' className='bg-white w-full py-2 px-4 rounded active:outline-2 active:outline-slate-600 focus:outline-2 focus:outline-slate-600 text-zinc-500 placeholder:text-zinc-500' >
+                <select name="subject" id="" className='bg-white w-full py-2 px-4 rounded active:outline-2 active:outline-slate-600 focus:outline-2 focus:outline-slate-600 text-zinc-500 placeholder:text-zinc-500' >
                   <option value="" className=''>Choose message subject</option>
                   <option value="">Feedback</option>
                   <option value="">Complaint</option>
+                  <option value="">I need Your Service</option>
                 </select>
               </div>
               <div className=" pb-5 *:block">
                 <label htmlFor="" className=' pb-2'>Message</label>
-                <textarea name="" id="" placeholder='Leave us a message' className='bg-white w-full py-2 px-4 rounded active:outline-2 active:outline-slate-600 focus:outline-2 focus:outline-slate-600 text-zinc-500 placeholder:text-zinc-500 min-h-30 resize-none' >
+                <textarea name="message" id="" placeholder='Leave us a message' className='bg-white w-full py-2 px-4 rounded active:outline-2 active:outline-slate-600 focus:outline-2 focus:outline-slate-600 text-zinc-500 placeholder:text-zinc-500 min-h-30 resize-none' >
                 </textarea>
               </div>
-              <div className=" pb-3 flex justify-center items-center">
+              {/* <div className=" pb-3 flex justify-center items-center">
                 <button className=' bg-slate-600 text-white py-2 px-3 rounded-full flex justify-between items-center gap-2'>
-                  <span className='block'>
                     Send Message
-                  </span>
-                  <span className=' flex justify-center items-center'>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-4">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
-                    </svg>
-                  </span>
                 </button>
-              </div>
+              </div> */}
+              <div className="pb-3 flex justify-center items-center">
+          <button
+            type="submit"
+            disabled={isSubmitting}
+            className={`py-2 px-3 rounded-full flex justify-between items-center gap-2 
+              ${isSubmitting ? "bg-gray-400 cursor-not-allowed" : "bg-slate-600 text-white"}`}
+          >
+            {isSubmitting ? "Sending..." : "Send Message"}
+          </button>
+        </div>
             </form>
           </div>
+
+          {showModal && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-white rounded-lg shadow-lg p-6 w-80 text-center">
+            <h3 className="text-lg font-semibold mb-3">✅ Message Sent!</h3>
+            <p className="text-gray-600 mb-4">We’ve received your message and will get back to you shortly.</p>
+            <button
+              onClick={() => setShowModal(false)}
+              className="bg-slate-600 text-white py-2 px-4 rounded-full"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
 
           <div className="">
             <div className=" background bg-slate-600 text-white min-h-[200px] h-[30dvh] py-7 px-8 flex flex-col justify-end rounded-md mb-4 lg:h-[50dvh]">

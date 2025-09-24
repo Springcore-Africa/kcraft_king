@@ -1,4 +1,3 @@
-import React from 'react'
 import Footer from '../components/Footer'
 import TopNav from '../components/TopNav'
 
@@ -19,7 +18,7 @@ function Portfolio() {
         <div className=" text-center pb-8">
           <section 
            className=" bg-[url('./assets/1-New-Size-11.jpg')] h-[40dvh] min-h-[200px] bg-position-[center_top_70%] bg-cover flex flex-col justify-center items-center rounded-2xl relative lg:h-[40dvh] 
-          
+           
           ">
             <h1 className=' text-5xl font-semibold text-white pb-3'>Our Portfolio</h1>
           </section>
@@ -48,6 +47,8 @@ function Portfolio() {
               buildingName={project.buildingName}
               desc={project.desc}
               gallery={project.gallery}
+              finishedProject={project.finishedProject}  
+              buildingProgress={project.buildingProgress}
               floorPlan={project.floorPlan}
               features={project.features}
             />

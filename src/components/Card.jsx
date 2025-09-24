@@ -8,6 +8,8 @@ function Card(props) {
         buildingName, 
         desc,
         gallery,
+        finishedProject,
+        buildingProgress,
         floorPlan,
         features,
     } = props;
@@ -22,6 +24,8 @@ function Card(props) {
             desc,
             gallery,
             floorPlan,
+            finishedProject, 
+            buildingProgress,
             features,
         }});
         console.log({
@@ -31,6 +35,8 @@ function Card(props) {
             desc,
             gallery,
             floorPlan,
+            finishedProject,  
+            buildingProgress,
             features,
         })
     }

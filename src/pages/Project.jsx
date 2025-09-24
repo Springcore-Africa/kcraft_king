@@ -13,7 +13,6 @@ import Footer from '../components/Footer';
 function Project() {
     const location = useLocation();
     const query = new URLSearchParams(location.search).get('query');
-
     const [project, setProject] = useState(null);
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
@@ -33,7 +32,8 @@ function Project() {
         return <div>Loading...</div>;
     }
 
-    const { img, buildingName, desc, gallery, floorPlan, features } = project;
+    const { img, buildingName, desc, gallery, floorPlan, features, finishedProject,
+        buildingProgress, } = project;
 
     return (
         <main className=''>
@@ -137,7 +137,7 @@ function Project() {
                                 </div>
                                 <div>
                                     <p>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas soluta culpa perspiciatis, aliquid maxime non maiores aspernatur recusandae a, sapiente minus blanditiis! Optio illo amet laborum ab error officia asperiores!
+                                        This floor plan features an open living and dining space connected to a modern kitchen, with bedrooms positioned for privacy and comfort. Natural light fills the rooms through large windows, while the simple layout ensures both functionality and easy access to outdoor areas.                        
                                     </p>
                                 </div>
                             </div>
@@ -147,11 +147,11 @@ function Project() {
                             <h3 className='text-xl font-semibold pb-2'>Building Progress</h3>
                             <div className="">
                                 <div className='pb-3'>
-                                    <img src={floorPlan} alt="" className='w-2/3 aspect-video object-cover' />
+                                    <img src={buildingProgress} alt="" className='w-2/3 aspect-video object-cover' />
                                 </div>
                                 <div>
                                     <p>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas soluta culpa perspiciatis, aliquid maxime non maiores aspernatur recusandae a, sapiente minus blanditiis! Optio illo amet laborum ab error officia asperiores!
+                                        The building process moved from careful site preparation and solid foundation work to the gradual rise of the structure, with walls, roofing, and finishes completed step by step to ensure strength, precision, and quality at every stage
                                     </p>
                                 </div>
                             </div>
@@ -161,11 +161,11 @@ function Project() {
                             <h3 className='text-xl font-semibold pb-2'>Finished Project</h3>
                             <div className="">
                                 <div className='pb-3'>
-                                    <img src={floorPlan} alt="" className='w-2/3 aspect-video object-cover' />
+                                    <img src={finishedProject} alt="" className='w-2/3 aspect-video object-cover' />
                                 </div>
                                 <div>
                                     <p>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas soluta culpa perspiciatis, aliquid maxime non maiores aspernatur recusandae a, sapiente minus blanditiis! Optio illo amet laborum ab error officia asperiores!
+                                        The finished building stands as a modern, well-crafted structure, combining functionality with style, and delivering a comfortable space designed to meet today’s living standards.
                                     </p>
                                 </div>
                             </div>

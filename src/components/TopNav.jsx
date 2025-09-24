@@ -69,14 +69,17 @@ const TopNav = () => {
                   <Link to='/portfolio'>Projects</Link>
                 </li>
               </ul>
-          {/* <button className=" flex justify-between items-center rounded-full outline bg-black">
+              <Link to="/contact-us">
+          <button className=" flex justify-between items-center rounded-full outline bg-black cursor-pointer">
             <span className=" bg-white rounded-full px-2 py-1 md:px-3 md:py-2">Get Started</span>
             <span className="text-white p-1 rounded-full ">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-4">
                 <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
               </svg>
             </span>
-          </button> */}
+          </button>
+          </Link>
+          
         </header>
         <Outlet />
     </>

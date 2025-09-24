@@ -4,8 +4,13 @@ import {Link, Outlet} from 'react-router-dom'
 import TopNav from '../components/TopNav'
 import Footer from '../components/Footer'
 
-import img1 from '../assets/k-craft/img-1.jpg'
-import logo from '../assets/k-craft/header-logo.png'
+import consult from '../assets/k-craft/consult.jpg'
+
+import joe from '../assets/k-craft/joe.jpg'
+import junior from '../assets/k-craft/jun.jpg'
+import endy from '../assets/k-craft/ENDY.jpg'
+import martins from '../assets/k-craft/MART.jpg'
+import yomi from '../assets/k-craft/yomi.webp'
 
 function AboutUsPage() {
   const [isOpen, setIsOpen] = useState(false);
@@ -78,6 +83,80 @@ function AboutUsPage() {
             </div>
           </div>
         </section>
+                {/* OUR SERVICES SECTION */}
+       <section className="py-12 bg-gradient-to-b from-zinc-50 to-white">
+  <div className="flex items-center gap-2 mb-5">
+    <span 
+      className="size-1.5 bg-amber-800 block relative rounded 
+      before:animate-ping before:absolute before:content-[''] before:size-2 before:bg-amber-800 before:top-1/2 before:left-1/2 before:-translate-1/2 before:rounded"
+    ></span>
+    <p className="text-amber-500 font-medium">Our Services</p>
+  </div>
+
+  <h2 className="text-3xl font-semibold text-slate-800 mb-10">
+    What We Offer
+  </h2>
+
+  <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    {/* Service Card */}
+    {[
+      {
+        title: "Architectural Design",
+        desc: "Innovative and sustainable designs tailored to meet modern lifestyle and functionality needs.",
+        img: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80",
+      },
+      {
+        title: "Interior Design",
+        desc: "Elegant and personalized interiors that combine creativity with comfort to enhance your living experience.",
+        img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80",
+      },
+      {
+        title: "Property Development",
+        desc: "From concept to completion, we manage and deliver high-quality residential and commercial projects.",
+        img: "https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=800&q=80",
+      },
+      {
+        title: "Renovation & Remodeling",
+        desc: "Upgrade, modernize, and transform existing spaces into functional and beautiful environments.",
+        img: "https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&w=600&q=80",
+      },
+      
+      {
+        title: "Project Management",
+        desc: "Professional oversight to ensure projects are delivered on time, within budget, and to the highest standards.",
+        img: "https://images.unsplash.com/photo-1523292562811-8fa7962a78c8?auto=format&fit=crop&w=600&q=80",
+      },
+      {
+        title: "Real Estate Consulting",
+        desc: "Expert guidance for property investment, buying, or selling, ensuring smooth and profitable transactions.",
+        img:consult,
+      },
+    ].map((service, index) => (
+      <div 
+        key={index} 
+        className="relative bg-zinc-100 rounded-xl overflow-hidden shadow hover:shadow-lg transition group"
+      >
+        {/* Image Background */}
+        <div className="absolute inset-0">
+          <img 
+            src={service.img} 
+            alt={service.title} 
+            className="w-full h-full object-cover group-hover:opacity-40 transition"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t  via-black/20 to-transparent"></div>
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 p-6 text-white">
+          <h4 className="text-xl font-semibold mb-2">{service.title}</h4>
+          <p className="text-sm text-zinc-200">{service.desc}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+
         <section className='py-5'>
           <div className=' flex items-center gap-2'>
             <span 
@@ -91,7 +170,7 @@ function AboutUsPage() {
           <div className=' py-5 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4'>
             <div className=" col-span-2 lg:col-span-1 lg:row-span-2 min-h-[250px]">
               <h4 className=' text-2xl pb-3'>
-                Meet the Architects Behind <span className='uppercase'>kcraft King</span>
+                Meet the Amazing Team Behind <span className='uppercase'>kcraft King</span>
               </h4>
               <p className=' text-zinc-700 pb-3'>
                 Get to know the passionate team behind <span className='uppercase'>kcraft King</span>—a group of decicated and briliant architects who bring your designs to life
@@ -105,15 +184,55 @@ function AboutUsPage() {
 
             <div className=" bg-zinc-100 flex flex-col justify-between p-3 rounded-md max-h-[612px] row-span-2">
               <div className=' w-full aspect-[1/2.43] pb-2 rounded-md overflow-hidden'>
-                <img src={img1} alt="" className=' size-full object-cover rounded-md' />
+                <img src={joe} alt="" className=' size-full object-cover rounded-md' />
               </div>
               <div className=''>
-                <h5 className='font-semibold text-slate-700'>Full Name</h5>
-                <p className=' text-zinc-600'>Position</p>
+                <h5 className='font-semibold text-slate-700'>Arc. Nachukwu Joseph</h5>
+                <p className=' text-zinc-600'>Lead Architect</p>
               </div>
             </div>
 
             <div className=" bg-zinc-100 flex flex-col justify-between p-3 rounded-md max-h-[300px]">
+              <div className=' w-full aspect-square pb-2 overflow-hidden'>
+                <img src={junior} alt="" className=' size-full object-cover rounded-md' />
+              </div>
+              <div className=''>
+                <h5 className='font-semibold text-slate-700'>Arc. Benjamin Abel Onyilokwu</h5>
+                <p className=' text-zinc-600'>Junior Architect</p>
+              </div>
+            </div>
+
+            <div className=" bg-zinc-100 flex flex-col justify-between p-3 rounded-md max-h-[300px]">
+              <div className=' w-full aspect-square pb-2 overflow-hidden'>
+                <img src={yomi} alt="" className=' size-full object-cover rounded-md' />
+              </div>
+              <div className=''>
+                <h5 className='font-semibold text-slate-700'>Arc Yomi Dapo</h5>
+                <p className=' text-zinc-600'>Associate Architect</p>
+              </div>
+            </div>
+
+            <div className=" bg-zinc-100 flex flex-col justify-between p-3 rounded-md max-h-[300px]">
+              <div className=' w-full aspect-square pb-2 overflow-hidden'>
+                <img src={endy} alt="" className=' size-full object-cover rounded-md' />
+              </div>
+              <div className=''>
+                <h5 className='font-semibold text-slate-700'>Endurance Uyi</h5>
+                <p className=' text-zinc-600'>Media Manager</p>
+              </div>
+            </div>
+
+            <div className=" bg-zinc-100 flex flex-col justify-between p-3 rounded-md max-h-[300px]">
+              <div className=' w-full aspect-square pb-2 overflow-hidden'>
+                <img src={martins} alt="" className=' size-full object-cover rounded-md' />
+              </div>
+              <div className=''>
+                <h5 className='font-semibold text-slate-700'>Martins Nwachukwu</h5>
+                <p className=' text-zinc-600'>Web Developer</p>
+              </div>
+            </div>
+
+            {/* <div className=" bg-zinc-100 flex flex-col justify-between p-3 rounded-md max-h-[300px]">
               <div className=' w-full aspect-square pb-2 overflow-hidden'>
                 <img src={img1} alt="" className=' size-full object-cover rounded-md' />
               </div>
@@ -151,47 +270,7 @@ function AboutUsPage() {
                 <h5 className='font-semibold text-slate-700'>Full Name</h5>
                 <p className=' text-zinc-600'>Position</p>
               </div>
-            </div>
-
-            <div className=" bg-zinc-100 flex flex-col justify-between p-3 rounded-md max-h-[300px]">
-              <div className=' w-full aspect-square pb-2 overflow-hidden'>
-                <img src={img1} alt="" className=' size-full object-cover rounded-md' />
-              </div>
-              <div className=''>
-                <h5 className='font-semibold text-slate-700'>Full Name</h5>
-                <p className=' text-zinc-600'>Position</p>
-              </div>
-            </div>
-
-            <div className=" bg-zinc-100 flex flex-col justify-between p-3 rounded-md max-h-[300px]">
-              <div className=' w-full aspect-square pb-2 overflow-hidden'>
-                <img src={img1} alt="" className=' size-full object-cover rounded-md' />
-              </div>
-              <div className=''>
-                <h5 className='font-semibold text-slate-700'>Full Name</h5>
-                <p className=' text-zinc-600'>Position</p>
-              </div>
-            </div>
-
-            <div className=" bg-zinc-100 flex flex-col justify-between p-3 rounded-md max-h-[300px]">
-              <div className=' w-full aspect-square pb-2 overflow-hidden'>
-                <img src={img1} alt="" className=' size-full object-cover rounded-md' />
-              </div>
-              <div className=''>
-                <h5 className='font-semibold text-slate-700'>Full Name</h5>
-                <p className=' text-zinc-600'>Position</p>
-              </div>
-            </div>
-
-            <div className=" bg-zinc-100 flex flex-col justify-between p-3 rounded-md max-h-[300px]">
-              <div className=' w-full aspect-square pb-2 overflow-hidden'>
-                <img src={img1} alt="" className=' size-full object-cover rounded-md' />
-              </div>
-              <div className=''>
-                <h5 className='font-semibold text-slate-700'>Full Name</h5>
-                <p className=' text-zinc-600'>Position</p>
-              </div>
-            </div>
+            </div> */}
           </div>
         </section>
       </section>
