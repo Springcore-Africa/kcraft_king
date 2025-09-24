@@ -1,6 +1,7 @@
-import Img1 from '../assets/k-craft/img-5.jpg';
+
 import Img2 from '../assets/k-craft/img-6.jpg';
 import Img3 from '../assets/k-craft/img-3.jpg';
+import Img1 from '../assets/k-craft/img-5.JPG';
 
 export const projects = [
   {
