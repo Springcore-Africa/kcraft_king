@@ -1,5 +1,5 @@
 
-import cozhyn from '../assets/k-craft/img-5.jpg';
+import cozhyn from '../assets/k-craft/img-5.JPG';
 import Ibzan from '../assets/k-craft/img-6.jpg';
 
 export const buildings = [
